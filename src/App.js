@@ -75,7 +75,7 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/addpodcast",
+    path: "/addsonges",
     element: <Addpodcast />,
   },
   {

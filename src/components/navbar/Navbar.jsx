@@ -53,7 +53,7 @@ const Navbar = () => {
                         {menu && <div className="options">
 
                             {user?.isAdmin && <Link className="link" to="/addpodcast">
-                                Add Podcast
+                                Add Songes
                             </Link>}
                             <p className="link" to="/">
                                 <button onClick={() => signOut(auth)}>Logout</button>

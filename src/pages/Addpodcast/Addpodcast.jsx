@@ -110,8 +110,8 @@ const Addpodcast = () => {
             <BiArrowBack size={40} style={{ color: 'white', padding: "10px", position: 'absolute', top: "20px", left: "20px", background: '#19C2E8', borderRadius: '100%' }} onClick={() => navigate('/')} />
             <div className="formWrapper formWrapper__col" style={{ gap: '60px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span className="logo">ZED Talks</span>
-                    <span className="title">Create Podcast</span>
+                    <span className="logo">HarmonyHub</span>
+                    <span className="title">Create Songe</span>
                     <form onSubmit={handleSubmit} ref={formRef}>
                         <input type="file" name='file3' id='file3' onChange={(e) => setImg2(e.target.files[0])} />
                         <label htmlFor="file3" style={{ display: 'flex', alignItems: 'center', gap: '5px' }} ><img src={img2 ? URL.createObjectURL(img2) : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'} style={{ height: '120px', width: '100%' }} alt="" />
@@ -138,7 +138,7 @@ const Addpodcast = () => {
 
 
 
-                        <button>Create </button>
+                        <button>ADD</button>
 
                     </form>
                 </div>
@@ -146,7 +146,7 @@ const Addpodcast = () => {
 
                 <div className="right">
 
-                    <h2>Previously added Podcast</h2>
+                    <h2>Previously added Songes</h2>
                     <div className="service-list">
                         {services !== 0 ? services?.map((item, index) => (
 

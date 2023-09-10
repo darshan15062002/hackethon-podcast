@@ -11,7 +11,7 @@ const Podecast = ({ setPod, filterdata }) => {
             <div className="podecast__Container">
 
 
-                {filterdata.map((item, index) => (
+                {(filterdata?.map((item, index) => (
                     <div className="podecast__Card" key={item.id}>
 
                         <AiFillPlayCircle className='podecast__Card--play' size={50} onClick={() => setPod({
@@ -30,9 +30,13 @@ const Podecast = ({ setPod, filterdata }) => {
                             <p>{item.description}</p>
                         </div>
                     </div>
-                ))}
+                )))}
+
+
+
 
             </div>
+
         </div>
     )
 }

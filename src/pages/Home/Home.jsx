@@ -72,7 +72,7 @@ const Home = () => {
         <div className='home'>
             <div className="home__main">
                 <Sidebar />
-                <Podecast setPod={setPod} filterdata={services.length === 0 ? filterdata : services} />
+                <Podecast setPod={setPod} filterdata={!search ? filterdata : services} />
             </div>
 
             {pod && <Play pod={pod} />}
