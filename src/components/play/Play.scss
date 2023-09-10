@@ -1,0 +1,86 @@
+@mixin mobile{
+    @media screen and (max-width:480px){
+        @content
+    }
+}
+.play{
+    display: flex;
+    position: sticky;
+    height: 5rem;
+   left: 0;
+
+    bottom: 0;
+    padding: 0 40px;
+    z-index: 100;
+    background: #000;
+    gap: auto;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    @include mobile(){
+        padding: 0 5px;
+        
+    }
+    .play__Left{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        gap: 20px;
+        width: 33.33%;
+        @include mobile(){
+            font-size: 8px;
+            gap:10px;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+            @include mobile(){
+                height: 40px;
+                width: 40px; 
+            }
+        }
+    }
+    .play__middle{
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+         max-width: 600px;
+          
+         @include mobile(){
+
+         }
+        .progress_container {
+			display: flex;
+			align-items: center;
+			
+           
+			
+			.progress {
+				width: 30rem;
+				height: 0.5rem;
+                 @include mobile(){
+            width: 10rem;
+            height: 0.3rem;
+         }
+			}
+		}
+	}
+    .play__Right{
+        width: 33.33%;
+       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img{
+            height: 50px;
+            width: 50%;
+    }
+    }
+    
+    
+    
+}

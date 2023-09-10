@@ -1,0 +1,70 @@
+@mixin mobile{
+  @media screen and (max-width:480px){
+      @content
+  }
+}
+
+.sidebar{
+    background-color: rgb(16, 16, 16);
+  
+  
+ width: 250px;
+ color: rgb(230, 230, 230);
+ @include mobile(){
+  display: none;
+ }
+.sidebar__Containter{
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+    flex-direction: column;
+    gap: 20px;
+    .sidebar__Home{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        transition: 0.5s all ease;
+        &:hover{
+          transform: translateX( 5px);
+          color: white;
+       
+          .global-class-name{
+            color: #19C2E8;
+            size: 50px;
+          }
+        }
+
+    }
+    .sidebar__Category{
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        transition: 0.5s all ease;
+        &:hover{
+          transform: translateX( 5px);
+          color: white;
+          .global-class-name{
+            color: #19C2E8;
+            
+          }
+        }
+      
+    }
+    .sidebar__Catogory--item{
+      display: flex;flex-direction: column;
+      color: rgb(215, 213, 213);
+      font-family: sans-serif;
+      justify-content: center;
+      cursor: pointer;
+  font-weight:300;
+  font-size: 0.8rem;
+  gap: 10px;
+    }
+
+}
+
+}

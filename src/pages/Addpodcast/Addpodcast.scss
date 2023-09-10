@@ -1,0 +1,91 @@
+@mixin mobile{
+  @media screen and (max-width:480px){
+      @content
+  }
+}
+.formContainer{
+
+
+  
+  .formWrapper__col{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    @include mobile(){
+      display: flex;
+      height: 100%;
+   
+    justify-content: center;
+    flex-direction: column;
+    }
+
+  }
+
+  
+    .right{
+        height: 450px;
+          .service-list{
+            height: 90%;
+            scroll-behavior: smooth;
+            overflow-x: scroll;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+            overflow: scroll;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+         
+          width: 100%;
+          .service-card{
+            height: 70px;
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 20px;
+            margin: 10px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            position: relative;
+            @include mobile(){
+              width: 250px;
+            }
+            .edit{
+               position: absolute;
+               right: 5px;
+               top:5px;
+               img{
+                height: 25px;
+                width: 25px;
+                
+               }
+            }
+            .card-info{
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              @include mobile(){
+               font-size: 10px;
+              }
+            }
+            img{
+                height: 70px;
+                width: 120px;
+            }
+            p{
+              overflow: hidden;
+              font-size: 10px;
+
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
+          }
+} 
+    }
+  }
+

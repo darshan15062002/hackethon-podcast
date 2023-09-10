@@ -1,0 +1,141 @@
+@mixin mobile{
+    @media screen and (max-width:480px){
+        @content
+    }
+}
+.navbar{
+    
+    height: 4rem;
+    background-color: black;
+    position: fixed;
+  top: 0;
+  left: 0;
+ 
+  z-index: 100;
+
+    color: white;
+    padding: 0 100px;
+    position: sticky;
+    @include mobile(){
+        padding: 0 10px; 
+    }
+    .navbar-Container{
+       height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+    .navbar-Left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        img{
+            height: 50px;
+          
+        }
+        span{
+        font-weight: 700;
+        font-size: 20px;
+        }
+    } 
+    .navbar-Middle{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mobile(){
+            display: none;
+        }
+        img{
+            position: absolute;
+            height: 25px;
+            right: 15px;
+        }
+        input{
+            width: 400px;
+            padding: 10px 31px;
+            border-radius: 100px;
+            outline:  1px solid #19C2E8;
+        }
+    }
+    .navbar-Right{
+        display: flex;justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        @include mobile(){
+            gap: 1rem;
+        }
+        .navbar_Signup{
+color: gray;
+text-decoration: none;
+font-weight: 700;
+font-size: 1rem;
+font-family: sans-serif;
+@include mobile(){
+    font-size: 0.7rem;
+}
+        }
+
+        .navbar-Login{
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: sans-serif;
+            @include mobile(){
+                font-size: 0.7rem;
+            }
+        }
+    }
+   
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        cursor: pointer;
+        
+        img {
+          height: 30px;
+          border-radius: 50%;
+         width: 30px;
+         border: 2px solid #ED0EF1;
+        }
+        span {
+          font-family: "Montserrat", sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          color: rgb(225, 214, 214);
+        }
+        .options {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          padding: 20px;
+          background-color: white;
+          border-radius: 10px;
+          border: 1px solid lightgray;
+          display: flex;
+          flex-direction: column;
+          color: gray;
+          width: 150px;
+          gap: 10px;
+          .link{
+            text-decoration: none;
+            color: inherit;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: transparent;
+            border-color: #ED0EF1;
+            border-radius: 20px;
+        }
+        }
+      }
+    }
+}
