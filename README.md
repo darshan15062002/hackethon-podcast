@@ -1,6 +1,8 @@
 
 Link => https://hackethon-podecast.web.app/
 
+https://majestic-basbousa-bca0e4.netlify.app/
+
 
 <img width="960" alt="Screenshot 2023-04-24 133434" src="https://user-images.githubusercontent.com/101007397/233936645-a9b1efa4-2a37-4b95-96c2-94439b95d156.png">
 
