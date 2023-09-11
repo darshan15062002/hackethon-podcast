@@ -76,7 +76,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/addsonges",
-    element: <Addpodcast />,
+    element: <Addsonges />,
   },
   {
     path: "/login",
