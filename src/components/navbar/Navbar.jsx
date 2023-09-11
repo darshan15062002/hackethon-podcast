@@ -52,7 +52,7 @@ const Navbar = () => {
                         <span>{currentUser?.displayName}</span>
                         {menu && <div className="options">
 
-                            {user?.isAdmin && <Link className="link" to="/addpodcast">
+                            {user?.isAdmin && <Link className="link" to="/addsonges">
                                 Add Songes
                             </Link>}
                             <p className="link" to="/">
