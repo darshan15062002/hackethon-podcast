@@ -19,6 +19,7 @@
     color: white;
     @include mobile(){
         padding: 0 5px;
+        gap: 10px;
         
     }
     .play__Left{
@@ -52,19 +53,30 @@
          @include mobile(){
 
          }
+         .play__middle--icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
         .progress_container {
 			display: flex;
 			align-items: center;
+            width: 100%;
 			
            
-			
-			.progress {
-				width: 30rem;
-				height: 0.5rem;
-                 @include mobile(){
-            width: 10rem;
-            height: 0.3rem;
-         }
+            .progress{
+                width: 100%;
+                @include mobile(){
+                    .progress {
+                        width: 30rem;
+                        height: 0.5rem;
+                        width: 100%;
+                      
+                        width: 100%;
+                    height: 0.3rem;
+                 }
+            }
+            
 			}
 		}
 	}

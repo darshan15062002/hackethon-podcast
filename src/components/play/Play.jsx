@@ -1,23 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Play.scss'
 import { BiPause, BiPlay, BiSkipNext, BiSkipPrevious } from 'react-icons/bi';
 import musicGIF from "../../img/c6c11d8ba0b9f26caf0a6a8ee3a3e78e.gif"
+import { AuthContext } from '../../context/AuthContext';
 
 
 
 const Play = ({ pod }) => {
-
+    const { currentUser } = useContext(AuthContext)
     const [audio, setAudio] = useState(new Audio(pod.audioFile));
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState();
+
+
+    console.log(pod);
+
+
     useEffect(() => {
         audio.pause();
 
         setAudio(new Audio(pod.audioFile));
+        // const res = async () => {
+        //     await updateDoc(doc(db, "users", res.user.uid), {
+        //         playback: arrayUnion({
+        //             category:pod.category,
+        //             description:pod.d
+        //         })
+
+        //     });
+        // }
+
+        // currentUser && res()
+
 
     }, [pod]);
-
     useEffect(() => {
         // Set up event listeners for the audio element
         audio.addEventListener('play', () => setIsPlaying(true));
@@ -34,11 +51,15 @@ const Play = ({ pod }) => {
         };
     }, [audio]);
 
+
     const togglePlay = () => {
         if (isPlaying) {
             audio.pause();
+            setIsPlaying(false)
+
         } else {
             audio.play();
+            setIsPlaying(true)
         }
     };
 
@@ -48,7 +69,7 @@ const Play = ({ pod }) => {
         setCurrentTime(newTime);
     };
 
-    console.log(window.innerWidth);
+
 
     return (
         <div className='play'>
@@ -62,20 +83,22 @@ const Play = ({ pod }) => {
             <div className='play__middle' >
                 <div className='play__middle--icon' >
                     <BiSkipPrevious size={window.innerWidth < 480 ? 30 : 40} />
-                    {isPlaying ? <BiPause size={window.innerWidth < 480 ? 30 : 40} onClick={togglePlay} /> : <BiPlay size={window.innerWidth < 480 ? 30 : 40} onClick={togglePlay} />}
+                    {isPlaying ? <BiPause style={{ height: `${window.innerWidth < 480 ? "30px" : '40px'}`, width: `${window.innerWidth < 480 ? "30px" : '40px'}`, background: 'red', borderRadius: '100%' }} size={window.innerWidth < 480 ? 20 : 30} onClick={togglePlay} />
+                        :
+                        <BiPlay style={{ height: `${window.innerWidth < 480 ? "30px" : '40px'}`, width: `${window.innerWidth < 480 ? "30px" : '40px'}`, background: 'red', borderRadius: '100%' }} onClick={togglePlay} />}
 
                     <BiSkipNext size={window.innerWidth < 480 ? 30 : 40} />
                 </div>
                 <div className='progress_container'>
 
-                    <input type="range" className='progress' min="0" max={duration} value={currentTime} onChange={handleProgressChange} style={{ height: '2px', color: '#19C2E8' }} />
-                    {/* <audio src={"https://samplelib.com/lib/preview/mp3/sample-3s.mp3"} ref={audioRef}></audio> */}
+                    <input type="range" className='progress' min="0" max={duration} value={currentTime} onChange={handleProgressChange} style={{ height: '2px', color: 'red' }} />
+                    <audio src={"https://samplelib.com/lib/preview/mp3/sample-3s.mp3"} />
 
                 </div>
 
             </div>
             <div className="play__Right">
-                <img src={musicGIF} alt="" />
+                {isPlaying && <img src='https://wynk.in/_next/static/media/animation.43a00529.svg' alt="" />}
             </div>
             {/* <div>
                 < BiLike />

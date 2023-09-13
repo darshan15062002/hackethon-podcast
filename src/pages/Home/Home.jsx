@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import '../Home/Home.scss'
 import Podecast from '../../components/Podecast/Podecast'
@@ -6,16 +6,24 @@ import Play from '../../components/play/Play'
 import { db } from "../../firebase";
 import { collection, collectionGroup, doc, getDocs, onSnapshot, query, where } from "firebase/firestore";
 import { SearchContext } from '../../context/SearchContext'
-
+import Webcam from 'react-webcam'
+import * as faceapi from "face-api.js";
+import { Outlet } from 'react-router-dom'
 
 
 
 const Home = () => {
+
+
+    const [face, setFace] = useState([])
+    const [image, setImage] = useState('');
     const [pod, setPod] = useState()
     const [filterdata, setFilterData] = useState([])
     const [services, setServices] = useState([])
     const { search, setSearch } = useContext(SearchContext);
-    console.log(search);
+
+
+
 
     useEffect(() => {
         const handleSubmit = async () => {
@@ -67,15 +75,17 @@ const Home = () => {
     }, [])
 
 
-
     return (
         <div className='home'>
             <div className="home__main">
                 <Sidebar />
+
+
                 <Podecast setPod={setPod} filterdata={!search ? filterdata : services} />
             </div>
 
             {pod && <Play pod={pod} />}
+
 
         </div>
     )

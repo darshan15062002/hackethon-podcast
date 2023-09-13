@@ -13,14 +13,21 @@
     scroll-behavior: smooth;
    
     -webkit-overflow-scrolling: touch;
+    @include mobile(){
+        padding: 20px;
+    }
     h1{
         color: white;
         font-family: sans-serif;
-        font-weight: 900;
+        font-weight: 600;
         margin-left: 40px;
+        font-size: 25px;
         border-bottom: 2px solid #ED0EF1;
         width: fit-content;
         padding-bottom: 2px;
+        @include mobile(){
+            font-size: 12px;
+        }
     }
     .podecast__Container{
         margin-top: 20px;
@@ -40,8 +47,8 @@
             position: relative;
             transition: 0.5s all ease;
             @include mobile(){
-                height: 300px;
-                width: 200px;
+                height: 200px;
+                width: 130px;
             }
             &:hover{
                   .podecast__Card--play{
@@ -65,7 +72,10 @@
                 width: 200px;
                 border-top-right-radius: 20px;
                 border-top-left-radius: 20px;
-
+                @include mobile(){
+                    height: 100px;
+                    width: 130px;
+                }
             }
             .podecast__Card--info{
                 display: flex;
@@ -76,6 +86,11 @@
                 gap: 10px;
                 padding: 0 20px;
                 font-family: sans-serif;
+                @include mobile(){
+                    font-size: 8px;
+                    gap: 2px;
+                    padding: 0 10px;
+                }
                 .podecast__Card--artist{
                     display: flex;
                     align-items: center;
@@ -84,6 +99,10 @@
                         height: 25px;
                         width: 25px;
                         border-radius: 50%;
+                        @include mobile(){
+                            height: 15px;
+                            width: 15px;
+                        }
                     }
                 }
                 p{
@@ -93,6 +112,9 @@
                     display: -webkit-box;
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
+                    @include mobile(){
+                        font-size: 8px;
+                    }
                 }
                
             }

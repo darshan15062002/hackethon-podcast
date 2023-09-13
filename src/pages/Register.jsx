@@ -52,6 +52,7 @@ const Register = () => {
 
               email,
               photoURL: downloadURL,
+              playback: []
             });
 
             navigate("/");

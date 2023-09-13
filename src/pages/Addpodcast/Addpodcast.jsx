@@ -76,7 +76,7 @@ const Addpodcast = () => {
                 return getDownloadURL(storageRef);
             });
             const dowURL = await Promise.all(dowURLPromises);
-
+            alert('Services is added succesfully');
             // Update Firestore document
             const res = await getDoc(doc(db, "podcast", currentUser.uid));
             if (!res.exists()) {
@@ -116,14 +116,14 @@ const Addpodcast = () => {
                         <input type="file" name='file3' id='file3' onChange={(e) => setImg2(e.target.files[0])} />
                         <label htmlFor="file3" style={{ display: 'flex', alignItems: 'center', gap: '5px' }} ><img src={img2 ? URL.createObjectURL(img2) : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'} style={{ height: '120px', width: '100%' }} alt="" />
                         </label>
-                        <input type="text" name='name' placeholder='Enter name of podcast' />
+                        <input type="text" name='name' placeholder='Enter name of music' />
                         <input type="textarea" name='description' placeholder='Description' />
                         <input type="text" name='category' placeholder='Category' />
                         <div style={{ display: 'flex', borderBottom: "1px solid black" }}>
                             <input type="file" name='file2' id='file2' onChange={(e) => setImg(e.target.files[0])} />
                             <label htmlFor="file2" style={{ display: 'flex', alignItems: 'center', gap: '5px' }} ><img src={img ? URL.createObjectURL(img) : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'} style={{ height: '30px', width: '30px', borderRadius: "100%" }} alt="" />
                             </label>
-                            <input type="text" name='speaker' placeholder='Speaker name' style={{ border: 'none' }} />
+                            <input type="text" name='speaker' placeholder='Singer' style={{ border: 'none' }} />
                         </div>
 
                         <input type="file" name='file' id='file' />

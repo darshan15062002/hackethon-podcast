@@ -3,7 +3,7 @@
 import '../src/style/style.scss'
 import Login from './pages/Login'
 import Register from './pages/Register'
-
+import { Suspense, lazy } from 'react';
 
 import {
   createBrowserRouter,
@@ -14,6 +14,8 @@ import {
 import Home from './pages/Home/Home';
 import Navbar from './components/navbar/Navbar';
 import Addpodcast from './pages/Addpodcast/Addpodcast';
+const FaceDetection = lazy(() => import('./pages/FaceDetaction/FaceDetection'))
+
 
 
 
@@ -66,6 +68,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/facedetection",
+        element: <Suspense> <FaceDetection /></Suspense>,
+      },
+
 
 
     ]

@@ -2,19 +2,20 @@ import React from 'react'
 import { AiOutlineHome, AiOutlineSearch } from 'react-icons/ai';
 import { BsFillChatSquareHeartFill } from 'react-icons/bs';
 import { FaHistory } from 'react-icons/fa';
-import { BiCategory } from 'react-icons/bi';
+import { BiCategory, BiFace } from 'react-icons/bi';
 
 import './Sidebar.scss'
 import { IconContext } from 'react-icons';
+import { Link } from 'react-router-dom';
 
 
-const category = ["Business News",
-    "Daily News",
-    "Entertainment News",
-    " News Commentary",
-    "  Politics",
-    "Sports News",
-    "Tech News"]
+const category = [
+    "Pop Song",
+    "Rock Song",
+    "Hip hop Song",
+    "  Romantic Song",
+    "Classical Song",
+    "Metal Songe"]
 const focusONSearch = () => {
 
     document.getElementById("input1").focus();
@@ -29,16 +30,21 @@ const Sidebar = () => {
         <div className='sidebar'>
             <div className="sidebar__Containter">
                 <IconContext.Provider value={{ className: "global-class-name" }}>
-                    <div className="sidebar__Home">
+                    <Link to="/" className="sidebar__Home" style={{ textDecoration: 'none', color: 'white' }}>
 
                         <AiOutlineHome />
 
                         <span>Home</span>
-                    </div>
+                    </Link>
+                    <Link to="/facedetection" className="sidebar__Home" style={{ textDecoration: 'none', color: 'white' }}>
+                        <BiFace />
+                        <span>Face Detection</span>
+                    </Link>
                     <div className="sidebar__Home" onClick={focusONSearch}>
                         <AiOutlineSearch />
                         <span>Search</span>
                     </div>
+
                     <div className="sidebar__Home">
                         <BsFillChatSquareHeartFill />
                         <span>Like Podecast</span>

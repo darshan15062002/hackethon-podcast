@@ -37,10 +37,12 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className="navbar-Container">
-                <div className="navbar-Left">
+
+                <Link to='/' className='navbar-Left' style={{ textDecoration: 'none', color: 'white', display: "flex" }}>
                     <img src={logo} alt="" />
                     <span>HarmonyHub</span>
-                </div>
+                </Link>
+
                 <div className="navbar-Middle">
 
                     <input maxlength="800" id='input1' placeholder="What do you want to listen to?" value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => setSearch(e.target.value)} />
@@ -52,7 +54,7 @@ const Navbar = () => {
                         <span>{currentUser?.displayName}</span>
                         {menu && <div className="options">
 
-                            {user?.isAdmin && <Link className="link" to="/addpodcast">
+                            {user?.isAdmin && <Link className="link" to="/addsonges">
                                 Add Songes
                             </Link>}
                             <p className="link" to="/">
@@ -65,7 +67,7 @@ const Navbar = () => {
                         <Link to={'/login'} className='navbar-Login'><span>Log in</span></Link>
                     </div>)}
             </div>
-        </div>
+        </div >
     )
 }
 

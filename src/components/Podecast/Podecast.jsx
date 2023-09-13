@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Podecast.scss'
 import { AiFillPlayCircle } from 'react-icons/ai';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const Podecast = ({ setPod, filterdata }) => {
-
+    const { currentUser } = useContext(AuthContext)
     return (
         <div className='podecast'>
-            <h1>Most Popular</h1>
+            {currentUser ? <h1>Made For You {currentUser?.displayName}</h1> : <h1>Tranding Songes</h1>}
             <div className="podecast__Container">
 
 
@@ -18,7 +19,8 @@ const Podecast = ({ setPod, filterdata }) => {
                             image: item.downloadlink[0],
                             name: item.pname,
                             artistName: item.speaker,
-                            audioFile: item.downloadlink[2]
+                            audioFile: item.downloadlink[2],
+                            category: item.category
                         })} />
                         <img src={item.downloadlink[0]} alt="" />
                         <div className="podecast__Card--info">
