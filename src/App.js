@@ -83,7 +83,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/addsonges",
-    element: <Addsonges />,
+    element: <Addpodcast />,
   },
   {
     path: "/login",
